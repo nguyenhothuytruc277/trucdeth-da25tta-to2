@@ -1,25 +1,246 @@
 <!DOCTYPE html>
-<html lang = "vi"
-        <head>
-                 <title>Tính diện tích hình chữ nhật </title>
-                 <meta charset = "utf-8">
-				
-       </head>
-       <body>
-            
-             <script> 
-         
-                let d = Number (prompt ("Hãy nhập chiều dài hình chữ nhật: ")) ;
-				
-                let r = Number (prompt("Hãy nhập ghiều rộng hình chữ nhật: ")) ;
-				
-                 if (d<r)
-                alert ("Chiều đài phải nhỏ hơn chiều rộng") ;
-					else if(d==r)
-                alert ("TRƯỞNG HỢP ĐỰC BIỆT :DIỆN TÍCH HÌNH VUÔNG LÀ: "+d*r) ;
-					else
-				alert ("DIỆN TÍCH HÌNH CHỦ NHẬT LÀ: " +d*r) ;
-			</script>
-			</body>
-			</html>
-	
+
+<html lang="vi">
+
+<head>
+
+    <title>Thiết kế trang giới thiệu thông tin sản phẩm</title>
+
+    <meta charset="utf-8">
+    <link rel = "stylesheet" href = "../css/style3.css">
+    <!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div id="product-list">
+
+            <!-- chứa danh sách các sản phẩm -->
+
+        </div>
+
+    </div>
+
+    <script>
+
+        // xác định khung chứa product-list
+
+        const listProducts = document.getElementById("product-list");
+
+        // tạo container có class="item"
+
+        const item = document.createElement("div");
+
+        item.setAttribute("class", "item");
+
+         // tạo khung chứa hình ảnh
+
+        const containerImage = document.createElement("div");
+
+        containerImage.setAttribute("class", "image");
+
+        // tạo ảnh
+
+        const img = document.createElement("img");
+
+        img.setAttribute("src", "../assets/images/lan.jpg");
+
+        img.setAttribute("alt", "con người");
+
+        img.setAttribute("style", "width:100%; max-width:150px");
+
+        // đưa ảnh vào khung chứa ảnh
+
+        containerImage.appendChild(img);
+
+        // tạo khung chứa thông tin
+
+        const containerInfo = document.createElement("div");
+
+        containerInfo.setAttribute("class", "info");
+
+        // tên sản phẩm
+
+        const nameProduct = document.createElement("p");
+
+        nameProduct.innerHTML = "NGƯỜI CHUPPI";
+
+        // giá
+
+        const price = document.createElement("p");
+
+        price.innerHTML = "3 cây vàng để lấy được Lan";
+
+        // mô tả
+
+        const description = document.createElement("p");
+
+        description.innerHTML = `
+
+            Đây là Lan đã độc thân được 20 năm.<br>
+
+            Chưa từng làm người yêu ai nhưng lại chứng kiến không biết bao nhiêu cuộc tình của người khác.<br>
+
+            Hiện tại Lan vẫn đang chờ một người xuất hiện, nhưng có vẻ người đó đang đi lạc hơi lâu.<br>
+
+            Chuyên ngành: ăn rồi ngủ.
+
+        `;
+
+        // liên kết
+
+        const linkProduct = document.createElement("a");
+
+        linkProduct.innerHTML = "Xem chi tiết";
+
+        linkProduct.setAttribute("href", "page6.html");
+
+        // gắn các phần tử vào khung thông tin
+
+        containerInfo.appendChild(nameProduct);
+
+        containerInfo.appendChild(price);
+
+        containerInfo.appendChild(description);
+
+        containerInfo.appendChild(linkProduct);
+
+        // gắn hình ảnh và thông tin vào item
+
+        item.appendChild(containerImage);
+
+        item.appendChild(containerInfo);
+
+        // đưa item vào danh sách sản phẩm
+
+        listProducts.appendChild(item);
+
+    </script>
+
+</body>
+
+</html>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <img src="https://i.imgur.com/W5D6V0M.jpeg">
+
+        <h2>Giống chó mỹ</h2>
+
+        <div class="price">5 triệu/túi</div>
+
+        <div class="desc">
+
+            Mô tả đặc trưng: Giống chó này tuy không đẹp
+
+            nhưng được cái cắn người. Ae mua nó nhớ cẩn thận.
+
+            Mỗi tháng chích ngừa cho nó 3 lần
+
+        </div>
+
+        <button>Xem chi tiết</button>
+
+    </div>
+
+    <div class="card">
+
+        <img src="https://i.imgur.com/3Y1Z8.jpeg">
+
+        <h2>Giống mèo Ả Rập</h2>
+
+        <div class="price">1.5 triệu/túi</div>
+
+        <div class="desc">
+
+            Mô tả đặc trưng: Giống mèo cũng cắn người
+
+        </div>
+
+        <button>Xem chi tiết</button>
+
+    </div>
+
+    <div class="card">
+
+        <img src="https://i.imgur.com/B7Q9G.jpeg">
+
+        <h2>Giống heo rừng</h2>
+
+        <div class="price">50 triệu/túi</div>
+
+        <div class="desc">
+
+            Mô tả đặc trưng: Giống heo chỉ biết ăn
+
+        </div>
+
+        <button>Xem chi tiết</button>
+
+    </div>
+
+    <div class="card">
+
+        <img src="https://i.imgur.com/F6p5V.jpeg">
+
+        <h2>Giống bò công sở</h2>
+
+        <div class="price">500 triệu/túi</div>
+
+        <div class="desc">
+
+            Mô tả đặc trưng: Giống bò này biết làm việc
+
+            thay con người nên giá hơi mắc
+
+        </div>
+
+        <button>Xem chi tiết</button>
+
+    </div>
+
+    <div class="card">
+
+        <img src="https://i.imgur.com/cR8wG.jpeg">
+
+        <h2>Giống gà morden</h2>
+
+        <div class="price">30 triệu/túi</div>
+
+        <div class="desc">
+
+            Mô tả đặc trưng: Loài này biết chơi điện thoại
+
+        </div>
+
+        <button>Xem chi tiết</button>
+
+    </div>
+
+    <div class="card">
+
+        <img src="https://i.imgur.com/Yg8mV.jpeg">
+
+        <h2>Giống ngựa</h2>
+
+        <div class="price">10 triệu/túi</div>
+
+        <div class="desc">
+
+            Mô tả đặc trưng: Loài này biết trêu chọc người khác
+
+        </div>
+
+        <button>Xem chi tiết</button>

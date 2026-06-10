@@ -18,112 +18,134 @@
 
 <body>
 
-    <div class="container">
+    <div class="container  tgki, ">
 
         <div id="product-list">
+         
+            
+        </div>
+</head>
 
-            <!-- chứa danh sách các sản phẩm -->
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <img src="https://i.imgur.com/W5D6V0M.jpeg">
+
+        <h2>Giống chó mỹ</h2>
+
+        <div class="price">5 triệu/túi</div>
+
+        <div class="desc">
+
+            Mô tả đặc trưng: Giống chó này tuy không đẹp
+
+            nhưng được cái cắn người. Ae mua nó nhớ cẩn thận.
+
+            Mỗi tháng chích ngừa cho nó 3 lần
 
         </div>
 
+        <button>Xem chi tiết</button>
+
     </div>
 
-    <script>
+    <div class="card">
 
-        // xác định khung chứa product-list
+        <img src="https://i.imgur.com/3Y1Z8.jpeg">
 
-        const listProducts = document.getElementById("product-list");
+        <h2>Giống mèo Ả Rập</h2>
 
-        // tạo container có class="item"
+        <div class="price">1.5 triệu/túi</div>
 
-        const item = document.createElement("div");
+        <div class="desc">
 
-        item.setAttribute("class", "item");
+            Mô tả đặc trưng: Giống mèo cũng cắn người
 
-         // tạo khung chứa hình ảnh
+        </div>
 
-        const containerImage = document.createElement("div");
+        <button>Xem chi tiết</button>
 
-        containerImage.setAttribute("class", "image");
+    </div>
 
-        // tạo ảnh
+    <div class="card">
 
-        const img = document.createElement("img");
+        <img src="https://i.imgur.com/B7Q9G.jpeg">
 
-        img.setAttribute("src", "../assets/images/lan.jpg");
+        <h2>Giống heo rừng</h2>
 
-        img.setAttribute("alt", "con người");
+        <div class="price">50 triệu/túi</div>
 
-        img.setAttribute("style", "width:100%; max-width:150px");
+        <div class="desc">
 
-        // đưa ảnh vào khung chứa ảnh
+            Mô tả đặc trưng: Giống heo chỉ biết ăn
 
-        containerImage.appendChild(img);
+        </div>
 
-        // tạo khung chứa thông tin
+        <button>Xem chi tiết</button>
 
-        const containerInfo = document.createElement("div");
+    </div>
 
-        containerInfo.setAttribute("class", "info");
+    <div class="card">
 
-        // tên sản phẩm
+        <img src="https://i.imgur.com/F6p5V.jpeg">
 
-        const nameProduct = document.createElement("p");
+        <h2>Giống bò công sở</h2>
 
-        nameProduct.innerHTML = "NGƯỜI CHUPPI";
+        <div class="price">500 triệu/túi</div>
 
-        // giá
+        <div class="desc">
 
-        const price = document.createElement("p");
+            Mô tả đặc trưng: Giống bò này biết làm việc
 
-        price.innerHTML = "3 cây vàng để lấy được Lan";
+            thay con người nên giá hơi mắc
 
-        // mô tả
+        </div>
 
-        const description = document.createElement("p");
+        <button>Xem chi tiết</button>
 
-        description.innerHTML = `
+    </div>
 
-            Đây là Lan đã độc thân được 20 năm.<br>
+    <div class="card">
 
-            Chưa từng làm người yêu ai nhưng lại chứng kiến không biết bao nhiêu cuộc tình của người khác.<br>
+        <img src="https://i.imgur.com/cR8wG.jpeg">
 
-            Hiện tại Lan vẫn đang chờ một người xuất hiện, nhưng có vẻ người đó đang đi lạc hơi lâu.<br>
+        <h2>Giống gà morden</h2>
 
-            Chuyên ngành: ăn rồi ngủ.
+        <div class="price">30 triệu/túi</div>
 
-        `;
+        <div class="desc">
 
-        // liên kết
+            Mô tả đặc trưng: Loài này biết chơi điện thoại
 
-        const linkProduct = document.createElement("a");
+        </div>
 
-        linkProduct.innerHTML = "Xem chi tiết";
+        <button>Xem chi tiết</button>
 
-        linkProduct.setAttribute("href", "page6.html");
+    </div>
 
-        // gắn các phần tử vào khung thông tin
+    <div class="card">
 
-        containerInfo.appendChild(nameProduct);
+        <img src="https://i.imgur.com/Yg8mV.jpeg">
 
-        containerInfo.appendChild(price);
+        <h2>Giống ngựa</h2>
 
-        containerInfo.appendChild(description);
+        <div class="price">10 triệu/túi</div>
 
-        containerInfo.appendChild(linkProduct);
+        <div class="desc">
 
-        // gắn hình ảnh và thông tin vào item
+            Mô tả đặc trưng: Loài này biết trêu chọc người khác
 
-        item.appendChild(containerImage);
+        </div>
 
-        item.appendChild(containerInfo);
-
-        // đưa item vào danh sách sản phẩm
-
-        listProducts.appendChild(item);
-
-    </script>
-
-</body>
-
-</html>
+        <button>Xem chi tiết</button>
+    </div>
+          </div>
+         
+        </body>
+          </div>
+            </body>
+       </html>
+    
