@@ -1,151 +1,220 @@
 <!DOCTYPE html>
-
 <html lang="vi">
-
 <head>
+<meta charset="UTF-8">
+<title>Danh sách người</title>
 
-    <title>Thiết kế trang giới thiệu thông tin sản phẩm</title>
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+}
 
-    <meta charset="utf-8">
-    <link rel = "stylesheet" href = "../css/style3.css">
-    <!-- Latest compiled and minified CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+/* tiêu đề */
+h1{
+    text-align:center;
+    padding:20px;
+    color:#333;
+}
 
-<!-- Latest compiled JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+/* layout card */
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+}
 
+/* card kiểu Shopee */
+.card{
+    width:220px;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:10px 0 5px;
+}
+
+.card p{
+    color:#666;
+    font-size:14px;
+}
+
+/* nút */
+button{
+    background:#ee4d2d;
+    color:white;
+    border:none;
+    padding:10px;
+    width:100%;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#d94424;
+}
+
+/* khung chi tiết */
+#chitiet{
+    width:450px;
+    margin:30px auto;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    text-align:center;
+    display:none;
+}
+
+#chitiet img{
+    width:100%;
+    border-radius:10px;
+}
+
+.back{
+    margin-top:10px;
+    display:inline-block;
+    padding:10px 15px;
+    background:#333;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+</style>
 </head>
 
 <body>
 
-    <div class="container  tgki, ">
-
-        <div id="product-list">
-         
-            
-        </div>
-</head>
-
-<body>
+<h1>🔥 Danh sách người xịn xò</h1>
 
 <div class="container">
 
     <div class="card">
-
-        <img src="https://i.imgur.com/W5D6V0M.jpeg">
-
-        <h2>Giống chó mỹ</h2>
-
-        <div class="price">5 triệu/túi</div>
-
-        <div class="desc">
-
-            Mô tả đặc trưng: Giống chó này tuy không đẹp
-
-            nhưng được cái cắn người. Ae mua nó nhớ cẩn thận.
-
-            Mỗi tháng chích ngừa cho nó 3 lần
-
-        </div>
-
-        <button>Xem chi tiết</button>
-
+        <img src="../assets/images/lan.jpg">
+        <h3>Người eo chang hy</h3>
+        <p>Ăn rồi ngủ</p>
+        <button onclick="hienThi('lan')">Xem chi tiết</button>
     </div>
 
     <div class="card">
-
-        <img src="https://i.imgur.com/3Y1Z8.jpeg">
-
-        <h2>Giống mèo Ả Rập</h2>
-
-        <div class="price">1.5 triệu/túi</div>
-
-        <div class="desc">
-
-            Mô tả đặc trưng: Giống mèo cũng cắn người
-
-        </div>
-
-        <button>Xem chi tiết</button>
-
+        <img src="../assets/images/minh.jpg">
+        <h3>Người lùn mà ốm</h3>
+        <p>Thích trai đẹp</p>
+        <button onclick="hienThi('minh')">Xem chi tiết</button>
     </div>
 
     <div class="card">
-
-        <img src="https://i.imgur.com/B7Q9G.jpeg">
-
-        <h2>Giống heo rừng</h2>
-
-        <div class="price">50 triệu/túi</div>
-
-        <div class="desc">
-
-            Mô tả đặc trưng: Giống heo chỉ biết ăn
-
-        </div>
-
-        <button>Xem chi tiết</button>
-
+        <img src="../assets/images/thu.jpg">
+        <h3>Người cao như cây dừa</h3>
+        <p>Ăn vặt nhiều</p>
+        <button onclick="hienThi('thu')">Xem chi tiết</button>
     </div>
 
     <div class="card">
-
-        <img src="https://i.imgur.com/F6p5V.jpeg">
-
-        <h2>Giống bò công sở</h2>
-
-        <div class="price">500 triệu/túi</div>
-
-        <div class="desc">
-
-            Mô tả đặc trưng: Giống bò này biết làm việc
-
-            thay con người nên giá hơi mắc
-
-        </div>
-
-        <button>Xem chi tiết</button>
-
+        <img src="../assets/images/vien.jpg">
+        <h3>Người bot</h3>
+        <p>Thích tập gym</p>
+        <button onclick="hienThi('vien')">Xem chi tiết</button>
     </div>
 
     <div class="card">
-
-        <img src="https://i.imgur.com/cR8wG.jpeg">
-
-        <h2>Giống gà morden</h2>
-
-        <div class="price">30 triệu/túi</div>
-
-        <div class="desc">
-
-            Mô tả đặc trưng: Loài này biết chơi điện thoại
-
-        </div>
-
-        <button>Xem chi tiết</button>
-
+        <img src="../assets/images/linh.jpg">
+        <h3>Người lét</h3>
+        <p>Ghiền game</p>
+        <button onclick="hienThi('linh')">Xem chi tiết</button>
     </div>
 
     <div class="card">
-
-        <img src="https://i.imgur.com/Yg8mV.jpeg">
-
-        <h2>Giống ngựa</h2>
-
-        <div class="price">10 triệu/túi</div>
-
-        <div class="desc">
-
-            Mô tả đặc trưng: Loài này biết trêu chọc người khác
-
-        </div>
-
-        <button>Xem chi tiết</button>
+        <img src="../assets/images/truc.jpg">
+        <h3>Người mập</h3>
+        <p>Con rắn chúa quỷ quiệt nhất thế gian, nhỏ bị trap</p>
+        <button onclick="hienThi('truc')">Xem chi tiết</button>
     </div>
-          </div>
-         
-        </body>
-          </div>
-            </body>
-       </html>
-    
+
+</div>
+
+<!-- CHI TIẾT -->
+<div id="chitiet">
+    <img id="anh">
+    <h2 id="ten"></h2>
+    <p id="mota"></p>
+    <p id="sothich"></p>
+
+    <div class="back" onclick="quayLai()">⬅ Quay lại</div>
+</div>
+
+<script>
+
+const data = {
+    lan:{
+        anh:"../assets/images/lan.jpg",
+        ten:"Người eo chang hy",
+        mota:"Ăn rồi ngủ, chụp pi",
+        sothich:"Ngủ"
+    },
+    minh:{
+        anh:"../assets/images/minh.jpg",
+        ten:"Người lùn mà ốm",
+        mota:"Thích trai đẹp",
+        sothich:"Ngắm trai"
+    },
+    thu:{
+        anh:"../assets/images/thu.jpg",
+        ten:"Người cao như cây dừa",
+        mota:"Ăn vặt nhiều",
+        sothich:"Trà sữa"
+    },
+    vien:{
+        anh:"../assets/images/vien.jpg",
+        ten:"Người bot",
+        mota:"Tập gym",
+        sothich:"Thể thao"
+    },
+    linh:{
+        anh:"../assets/images/linh.jpg",
+        ten:"Người lét",
+        mota:"Ghiền game",
+        sothich:"Chơi game"
+    },
+    truc:{
+        anh:"../assets/images/truc.jpg",
+        ten:"Người mập",
+        mota:"Con rắn chúa quỷ quiệt nhất thế gian, nhỏ bị trap",
+        sothich:"Thích xem phim đam mỹ"
+    }
+};
+
+function hienThi(id){
+    document.getElementById("chitiet").style.display="block";
+
+    document.getElementById("anh").src=data[id].anh;
+    document.getElementById("ten").innerText=data[id].ten;
+    document.getElementById("mota").innerText="Mô tả: "+data[id].mota;
+    document.getElementById("sothich").innerText="Sở thích: "+data[id].sothich;
+}
+
+function quayLai(){
+    document.getElementById("chitiet").style.display="none";
+}
+
+</script>
+
+</body>
+</html>

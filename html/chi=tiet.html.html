@@ -4,26 +4,66 @@
 
 <head>
 
-    <title>Thiết kế trang giới thiệu thông tin sản phẩm</title>
+<meta charset="UTF-8">
 
-    <meta charset="utf-8">
-    <link rel = "stylesheet" href = "../css/style4.css">
-    <!-- Latest compiled and minified CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>Giới thiệu</title>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<style>
 
-</head>
+.container{
 
-<body>
+    display:flex;
 
-    <div class="container  tgki, ">
+    gap:20px;
 
-        <div id="product-list">
-         
-            
-        </div>
+    justify-content:center;
+
+}
+
+.card{
+
+    width:180px;
+
+    border:1px solid #ccc;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+}
+
+button{
+
+    background:#00bfff;
+
+    color:white;
+
+    border:none;
+
+    padding:10px;
+
+    cursor:pointer;
+
+}
+
+#chitiet{
+
+    width:500px;
+
+    margin:30px auto;
+
+    border:2px solid #00bfff;
+
+    padding:20px;
+
+    border-radius:10px;
+
+}
+
+</style>
+
 </head>
 
 <body>
@@ -32,112 +72,75 @@
 
     <div class="card">
 
-        <img src="../assets/images/lan.jpg">
+        <h2>Người eo chang hy</h2>
 
-        <h2>Người eo chang hy </h2>
+        <p>Ăn rồi ngủ, chụp pi</p>
 
-        <div class="price">3 cây vàng/người</div>
+        <button onclick="hienThi(
 
-        <div class="desc">
+        'Người eo chang hy',
 
-            Mô tả đặc trưng: ăn rồi ngủ, chúp pi
-        </div>
+        'Ăn rồi ngủ, chụp pi',
 
-        <button>Xem chi tiết</button>
+        'Sở thích: ngủ'
 
-    </div>
+        )">
 
-    <div class="card">
+        Xem chi tiết
 
-        <img src="../assets/images/minh.jpg">
-
-        <h2>Người lùn mà ốm </h2>
-
-        <div class="price">1000 hủ kem trộn/người</div>
-
-        <div class="desc">
-
-            Mô tả đặc trưng: thích trai đẹp
-
-        </div>
-
-        <button>Xem chi tiết</button>
+        </button>
 
     </div>
 
     <div class="card">
 
-        <img src="../assets/images/thu.jpg">
+        <h2>Người lùn mà ốm</h2>
 
-        <h2>Người cao như cây dừa</h2>
+        <p>Thích trai đẹp</p>
 
-        <div class="price">200 ly trà sữa, 100 tô mì cai, 300 cái bánh kem/người</div>
+        <button onclick="hienThi(
 
-        <div class="desc">
+        'Người lùn mà ốm',
 
-            Mô tả đặc trưng: ăn vặt nhiều nhất Việt Nam
+        'Thích trai đẹp',
 
-        </div>
+        'Sở thích: ngắm trai'
 
-        <button>Xem chi tiết</button>
+        )">
 
-    </div>
+        Xem chi tiết
 
-    <div class="card">
-
-        <img src="../assets/images/vien.jpg">
-
-        <h2>Người bot</h2>
-
-        <div class="price">200 ký ức gà, 1000 quả trứng gà,100 thùng mì tôm/người</div>
-
-        <div class="desc">
-
-            Mô tả đặc trưng: thích trai 6 múi, cao 
-        </div>
-
-        <button>Xem chi tiết</button>
+        </button>
 
     </div>
 
-    <div class="card">
+</div>
 
-        <img src="../assets/images/linh.jpg">
+<div id="chitiet">
 
-        <h2>Người lét</h2>
+    <h2>Thông tin chi tiết</h2>
 
-        <div class="price">solo thắng 100 trận phi phai/người</div>
+    <h3 id="ten"></h3>
 
-        <div class="desc">
+    <p id="mota"></p>
 
-            Mô tả đặc trưng: lét, thích gái nha
-        </div>
+    <p id="sothich"></p>
 
-        <button>Xem chi tiết</button>
+</div>
 
-    </div>
+<script>
 
-    <div class="card">
+function hienThi(ten,mota,sothich){
 
-        <img src="../assets/images/truc.jpg">
+    document.getElementById("ten").innerHTML=ten;
 
-        <h2>Người dễ thương</h2>
+    document.getElementById("mota").innerHTML=mota;
 
-        <div class="price">nhà lầu biệt thư, xe hơi, hồ cá koi, 1000 công đất/người</div>
+    document.getElementById("sothich").innerHTML=sothich;
+    }
 
-        <div class="desc">
+</script>
 
-            Mô tả đặc trưng: đẹp chai, dễ thương, nhẹ nhàng
-           tinh tế, biết quan tâm người khác, thích ngắm cái đẹp đặc biết là cổ kkkk 
+</body>
 
-        </div>
-
-        <button>Xem chi tiết</button>
-    </div>
-          </div>
-         
-        </body>
-          </div>
-            </body>
-       </html>
-    
+</html>

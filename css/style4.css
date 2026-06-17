@@ -1,123 +1,80 @@
-<!DOCTYPE html>
+body{
+    margin:0;
+    font-family: Arial;
+    background: linear-gradient(135deg,#ffecd2,#fcb69f);
+    text-align:center;
+}
 
-<html lang="vi">
+h1{
+    padding:20px;
+    color:#333;
+}
 
-<head>
+/* layout */
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+}
 
-<meta charset="UTF-8">
+/* card */
+.card{
+    width:220px;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    overflow:hidden;
+    transition:0.3s;
+}
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+.card:hover{
+    transform:translateY(-5px);
+}
 
-<title>Danh sách thú cưng</title>
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
 
-<style>
+.card h3{
+    margin:10px 0 5px;
+}
 
-    *{
+.card p{
+    color:#666;
+    font-size:14px;
+}
 
-        margin: 0;
+/* button */
+button{
+    background:#ee4d2d;
+    color:white;
+    border:none;
+    padding:10px;
+    width:100%;
+    cursor:pointer;
+    font-weight:bold;
+}
 
-        padding: 0;
+button:hover{
+    background:#d94424;
+}
 
-        box-sizing: border-box;
+/* chi tiết */
+#chitiet{
+    width:450px;
+    margin:30px auto;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    display:none;
+}
 
-        font-family: Arial;
-
-    }
-
-    body{
-
-        background: #1f49c7;
-
-        padding: 40px;
-
-    }
-
-    .container{
-
-        width: 90%;
-
-        margin: auto;
-
-        display: flex;
-
-        justify-content: space-around;
-
-        gap: 30px;
-
-    }
-
-    .card{
-
-        background: white;
-
-        border-radius: 5px;
-
-        padding: 15px;
-
-        width: 350px;
-
-    }
-
-    .card img{
-
-        width: 80px;
-
-        height: 100px;
-
-        object-fit: cover;
-
-    }
-
-    .card h2{
-
-        margin-top: 10px;
-
-        margin-bottom: 10px;
-
-        font-weight: normal;
-
-    }
-
-    .price{
-
-        font-size: 14px;
-
-        margin-bottom: 10px;
-
-        color: gray;
-
-    }
-
-    .desc{
-
-        font-size: 14px;
-
-        line-height: 22px;
-
-        margin-bottom: 15px;
-
-    }
-
-    button{
-
-        background: #00cfff;
-
-        border: none;
-
-        padding: 8px 14px;
-
-        border-radius: 3px;
-
-        cursor: pointer;
-
-    }
-
-    button:hover{
-
-        opacity: 0.8;
-
-    }
-
-</style>
-
-
+#chitiet img{
+    width:100%;
+    border-radius:10px;
+}
