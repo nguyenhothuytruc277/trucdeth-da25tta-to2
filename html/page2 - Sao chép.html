@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Cứu Hộ Ngập Lụt Trà Vinh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h2 { color: #333; }
+        p { color: #666; font-size: 14px; }
+        
+        /* Hiệu ứng nhấp nháy khẩn cấp cho nút SOS */
+        .btn-sos {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background-color: #ff3333;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 0 0 rgba(255, 51, 51, 0.7);
+            animation: pulse-sos 1.5s infinite;
+        }
+        @keyframes pulse-sos {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 51, 51, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(255, 51, 51, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 51, 51, 0); }
+        }
+        .info-box {
+            margin-top: 25px;
+            padding: 10px;
+            background: #eee;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>CỨU HỘ KHẨN CẤP</h2>
+    <p>Ấn vào nút bên dưới để gửi vị trí tọa độ của bạn về trung tâm cứu hộ tỉnh Trà Vinh</p>
+    
+    <!-- Nút bấm tương tác do bạn thực hiện -->
+    <button class="btn-sos" onclick="layToaDo()">SOS</button>
+    
+    <div class="info-box">
+        <strong>Tọa độ của bạn:</strong>
+        <p id="hien-thi-toa-do">Chưa xác định (Bấm SOS để lấy)</p>
+    </div>
+</div>
+
+<script>
+    // Hàm JavaScript xử lý định vị Geolocation API
+    function layToaDo() {
+        const textToaDo = document.getElementById("hien-thi-toa-do");
+        if (navigator.geolocation) {
+            textToaDo.innerText = "Đang quét vị trí GPS...";
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    textToaDo.innerHTML = `Vĩ độ: ${position.coords.latitude.toFixed(4)} <br> Kinh độ: ${position.coords.longitude.toFixed(4)}`;
+                    alert("Đã lấy tọa độ thành công! Hệ thống dự kiến sẽ truyền dữ liệu này về máy chủ.");
+                },
+                () => {
+                    textToaDo.innerText = "Không thể truy cập GPS. Vui lòng bật định vị trên điện thoại.";
+                }
+            );
+        } else {
+            textToaDo.innerText = "Trình duyệt của bạn không hỗ trợ định vị.";
+        }
+    }
+</script>
+
+</body>
+</html>

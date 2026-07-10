@@ -1,0 +1,40 @@
+ul{
+	width: 60%;
+	margin: 10px;
+	background:white;
+	padding:10px 20px;
+	border:1px solid black;
+	border-radius:15px;
+            color: deeppink;
+}
+ol{
+	width: 60%;
+	margin: 10px;
+	background:white;
+	padding:10px 20px;
+	border:1px solid black;
+	border-radius:15px;
+           color: deeppink;
+}
+table{
+        width: 60%;
+	margin: 10px;
+	background:white;
+	padding:10px 20px;
+	border:1px solid black;
+	border-radius:15px;
+           color: deeppink;
+}
+div{
+        idth: 60%;
+	margin: 10px;
+	background:white;
+	padding:10px 20px;
+	border:1px solid black;
+	border-radius:15px;
+        color: deeppink;
+}
+
+body{
+        background-color: #faf0e6;
+} 

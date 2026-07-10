@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE LEGENDS - Thượng Uyển Rượu Vang</title>
+    <!-- Fonts chữ cao cấp -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET & VARIABLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #070708;
+            --card-bg: #0e0e10;
+            --gold: #c5a880;
+            --gold-glow: rgba(197, 168, 128, 0.2);
+            --burgundy: #58111A;
+            --text-light: #f3f3f3;
+            --text-muted: #8a8a93;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- HEADER (Kính mờ luxury) --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: rgba(7, 7, 8, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.08);
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-left: 35px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* --- HERO BANNER --- */
+        .hero {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(to bottom, rgba(7,7,8,0.2), var(--bg-color)),
+                        url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1920') center/cover no-repeat;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.05);
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 52px;
+            font-weight: 400;
+            letter-spacing: 6px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 14px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            max-width: 600px;
+        }
+
+        /* --- PRODUCT SECTION --- */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 4%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        /* CARD SIÊU CẤP */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            border-radius: 2px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid var(--gold);
+            opacity: 0;
+            scale: 0.95;
+            transition: all 0.4s ease;
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            background-color: #131316;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--gold-glow);
+        }
+
+        .card:hover::before {
+            opacity: 0.15;
+            scale: 1;
+        }
+
+        /* Vùng chứa ảnh rượu */
+        .img-box {
+            height: 320px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .img-box img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+            /* Đổ bóng cho chai rượu */
+            filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.7));
+        }
+
+        .card:hover .img-box img {
+            transform: scale(1.06) rotate(1deg);
+        }
+
+        /* Thông tin sản phẩm */
+        .origin {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            height: 50px; /* Cố định để card đều nhau */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .price {
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        /* Nút Mua hàng tối giản ngầu */
+        .btn-buy {
+            background: transparent;
+            border: 1px solid rgba(197, 168, 128, 0.3);
+            color: var(--text-light);
+            padding: 14px 0;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .card:hover .btn-buy {
+            background-color: var(--burgundy);
+            border-color: var(--burgundy);
+            color: #fff;
+            box-shadow: 0 0 15px rgba(88, 17, 26, 0.7);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            header { padding: 20px 5%; }
+            nav { display: none; }
+            .hero h1 { font-size: 36px; }
+            .grid { grid-template-columns: 1fr; }
+        }
+        /* Style lại nút bấm chi tiết cho ngầu và sang hơn */
+.wine-action-btn {
+    background: transparent; /* Nền trong suốt quý phái */
+    border: 1px solid #c5a880; /* Viền màu vàng đồng nhạt */
+    color: #f5f5f7; /* Màu chữ trắng kem */
+    padding: 14px 28px;
+    font-size: 11px; /* Chữ nhỏ gọn, tinh tế */
+    text-transform: uppercase; /* Ép chữ viết hoa toàn bộ */
+    letter-spacing: 3px; /* Giãn cách các chữ cái ra nhìn rất nghệ thuật */
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); /* Hiệu ứng mượt mà */
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Hiệu ứng khi di chuột (Hover) vào nút */
+.wine-action-btn:hover {
+    background-color: #58111a; /* Đổi sang nền đỏ rượu vang (Burgundy) */
+    border-color: #58111a;
+    color: #ffffff;
+    /* Tạo hiệu ứng bóng mờ phát sáng đỏ nhẹ xung quanh nút */
+    box-shadow: 0 0 20px rgba(88, 17, 26, 0.6); 
+    letter-spacing: 4px; /* Chữ hơi giãn nhẹ ra thêm một chút khi hover */
+}
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">Túc Deth</div>
+        <nav>
+            <a href="#">Hầm Rượu</a>
+            <a href="#">Đấu Giá</a>
+            <a href="#">Đặc Quyền</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>The Legendary Collection</h1>
+        <p>10 Tuyệt Tác Di Sản Được Săn Đón Nhất Hành Tinh</p>
+    </section>
+
+    <!-- MAIN PRODUCT GRID -->
+    <main class="container">
+        <div class="grid">
+
+            <!-- 1. Romanée-Conti -->
+            <div class="card">
+                <div class="origin">Burgundy, France</div>
+                <div class="img-box">
+                    <img src="../assets/images/ruou1.jpeg">
+                </div>
+                <h3 class="title">Romanée-Conti Grand Cru</h3>
+                <div class="price">650.000.000 đ</div>
+                <button class="btn-buy">Mua Ngay</button>
+                <a href="../chitiet.html">Xem chi tiết</a>
+            </div>
+
+            <!-- 2. Château Lafite Rothschild -->
+            <div class="card">
+                <div class="origin">Bordeaux, France</div>
+                <div class="img-box">
+                    <img src="../assets/images/ruou2.jpg">
+                </div>
+                <h3 class="title">Château Lafite Rothschild</h3>
+                <div class="price">45.000.000 đ</div>
+                <button class="btn-buy">Mua Ngay</button>
+            </div>
+
+            <!-- 3. Château Margaux -->
+            <div class="card">
+                <div class="origin">Bordeaux, France</div>
+                <div class="img-box">
+                    <img src="../assets/images/ruou3.jpg">
+                </div>
+                <h3 class="title">Château Margaux</h3>
+                <div class="price">38.000.000 đ</div>
+                <button class="btn-buy">Mua Ngay</button>
+            </div>
+
+            <!-- 4. Petrus -->
+            <div class="card">
+                <div class="origin">Pomerol, France</div>
+                <div class="img-box">
+                    <img src="../assets/images/ruou4.jpg">
+                </div>
+                <h3 class="title">Petrus Grand Vin</h3>
+                <div class="price">120.000.000 đ</div>
+                <button class="btn-buy">Mua Ngay</button>
+            </div>
+
+            <!-- 5. Screaming Eagle -->
+            <div class="card">
+                <div class="origin">Napa Valley, USA</div>
+                <div class="img-box">
+                    <img src="../assets/images/ruou5.jpg">
+                </div>
+                <h3 class="title">Screaming Eagle Cabernet Sauvignon</h3>
+                <div class="price">160.000.000 đ</div>
+                <button class="btn-buy">Mua Ngay</button>
+            </div>
+
+            <!-- 6. Domaine Leroy Musigny -->
+            <div class="card">
+                <div class="origin">Burgundy, France</div>
+                <div class="img-box">
+                    <img src="../assets/images/ruou6.jpeg">
+                </div>
+                <h3 class="title">Domaine Leroy Musigny Grand Cru</h3>
+                <div class="price">580.000.000 đ</div>
+                <button class="btn-buy">Mua Ngay</button>
+            </div>
+
+            <!-- 7. Sassicaia -->
+            <div class="card">
+                <div class="origin">Tuscany, Italy</div>
+                <div class="img-box">
+                    <img src="../assets/images/ruou7.jpg">
+                </div>
+                <h3 class="title">Sassicaia Tenuta San Guido</h3>
+                <div class="price">12.500.000 đ</div>
+                <button class="btn-buy">Mua Ngay</button>
+            </div>
+
+            <!-- 8. Penfolds Grange -->
+            <div class="card">
+                <div class="origin">South Australia</div>
+                <div class="img-box">
+                    <img src="../assets/images/ruou8.jpg">
+                </div>
+                <h3 class="title">Penfolds Grange Bin 95</h3>
+                <div class="price">22.000.000 đ</div>
+                <button class="btn-buy">Mua Ngay</button>
+            </div>
+
+            <!-- 9. Opus One -->
+            <div class="card">
+                <div class="origin">Napa Valley, USA</div>
+                <div class="img-box">
+                    <img src="../assets/images/ruou9.jpg">
+                </div>
+                <h3 class="title">Opus One Napa Valley</h3>
+                <div class="price">18.500.000 đ</div>
+                <button class="btn-buy">Mua Ngay</button>
+            </div>
+
+            <!-- 10. Dom Pérignon P2 -->
+            <div class="card">
+                <div class="origin">Champagne, France</div>
+                <div class="img-box">
+                    <img src="../assets/images/ruou10.jpg">
+                </div>
+                <h3 class="title">Dom Pérignon P2 Plénitude</h3>
+                <div class="price">15.000.000 đ</div>
+                <button class="btn-buy">Mua Ngay</button>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

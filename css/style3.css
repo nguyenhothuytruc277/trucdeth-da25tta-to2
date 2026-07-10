@@ -1,0 +1,159 @@
+<style>
+
+    *{
+
+        margin:0;
+
+        padding:0;
+
+        box-sizing:border-box;
+
+        font-family:Arial, sans-serif;
+
+    }
+
+    body{
+
+        min-height:100vh;
+
+        padding:30px;
+
+        /* nền cầu vồng LGBT */
+
+        background: linear-gradient(
+
+            90deg,
+
+            #e40303,
+
+            #ff8c00,
+
+            #ffed00,
+
+            #008026,
+
+            #004dff,
+
+            #750787
+
+        );
+
+    }
+
+    .container{
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        min-height:90vh;
+
+    }
+
+    #product-list{
+
+        width:100%;
+
+        max-width:800px;
+
+    }
+
+    .item{
+
+        display:flex;
+
+        gap:25px;
+
+        padding:25px;
+
+        border-radius:20px;
+
+        /* khung thông tin xanh dương nhạt */
+
+        background:#dbeafe;
+
+        box-shadow:0 6px 20px rgba(0,0,0,0.2);
+
+    }
+
+    .image img{
+
+        width:180px;
+
+        height:180px;
+
+        object-fit:cover;
+
+        border-radius:15px;
+
+        border:4px solid white;
+
+    }
+
+    .info{
+
+        flex:1;
+
+    }
+
+    .info p:first-child{
+
+        font-size:28px;
+
+        font-weight:bold;
+
+        color:#1e3a8a;
+
+        margin-bottom:10px;
+
+    }
+
+    .info p:nth-child(2){
+
+        font-size:20px;
+
+        font-weight:bold;
+
+        color:#2563eb;
+
+        margin-bottom:12px;
+
+    }
+
+    .info p:nth-child(3){
+
+        color:#334155;
+
+        line-height:1.8;
+
+        margin-bottom:15px;
+
+    }
+
+    .info a{
+
+        display:inline-block;
+
+        text-decoration:none;
+
+        background:#2563eb;
+
+        color:white;
+
+        padding:10px 20px;
+
+        border-radius:10px;
+
+        font-weight:bold;
+
+    }
+
+    .info a:hover{
+
+        transform:scale(1.05);
+
+        transition:0.3s;
+	}
+	</style>

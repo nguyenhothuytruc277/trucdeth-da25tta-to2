@@ -1,0 +1,80 @@
+body{
+    margin:0;
+    font-family: Arial;
+    background: linear-gradient(135deg,#ffecd2,#fcb69f);
+    text-align:center;
+}
+
+h1{
+    padding:20px;
+    color:#333;
+}
+
+/* layout */
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+}
+
+/* card */
+.card{
+    width:220px;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:10px 0 5px;
+}
+
+.card p{
+    color:#666;
+    font-size:14px;
+}
+
+/* button */
+button{
+    background:#ee4d2d;
+    color:white;
+    border:none;
+    padding:10px;
+    width:100%;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#d94424;
+}
+
+/* chi tiết */
+#chitiet{
+    width:450px;
+    margin:30px auto;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    display:none;
+}
+
+#chitiet img{
+    width:100%;
+    border-radius:10px;
+}

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINO NOIR - Rượu Vang Cao Cấp</title>
+    <style>
+        /* --- RESET & FONTS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', 'Segoe UI', serif;
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #f5f5f5;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- GLOBAL STYLE --- */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(11, 11, 11, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: #d4af37; /* Màu vàng đồng */
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #800020; /* Màu đỏ Burgundy */
+            text-shadow: 0 0 8px rgba(128, 0, 32, 0.8);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            position: relative;
+            /* Thay ảnh nền thật của bạn vào đây nếu có */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), #0b0b0b), 
+                        url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1920') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 64px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .hero-content h1 span {
+            color: #800020;
+            text-shadow: 0 0 20px rgba(128, 0, 32, 0.6);
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            color: #ccc;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            letter-spacing: 1px;
+        }
+
+        /* Nút bấm ngầu */
+        .btn-premium {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: 600;
+            position: relative;
+            transition: 0.5s ease;
+            background: transparent;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #800020;
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .btn-premium:hover::before {
+            left: 0;
+        }
+
+        .btn-premium:hover {
+            color: #fff;
+            border-color: #800020;
+            box-shadow: 0 0 20px rgba(128, 0, 32, 0.6);
+        }
+
+        /* --- PRODUCTS SECTION --- */
+        .products-section {
+            padding: 100px 8%;
+            background-color: #0b0b0b;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .section-title p {
+            color: #d4af37;
+            font-style: italic;
+            margin-top: 10px;
+            letter-spacing: 2px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        /* Card Sản Phẩm */
+        .product-card {
+            background: #121212;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            transition: 0.4s ease;
+            border-radius: 4px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(128, 0, 32, 0.5);
+            box-shadow: 0 10px 30px rgba(128, 0, 32, 0.2);
+        }
+
+        .product-img {
+            height: 300px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s ease;
+        }
+
+        /* Giả lập chai rượu bằng CSS/Glow nếu không có ảnh */
+        .product-img img {
+            max-height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.6));
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        .product-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .product-price {
+            color: #d4af37;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .product-card:hover .add-to-cart {
+            background: #800020;
+            border-color: #800020;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 44px; }
+            .nav-links { display: none; } /* Thu gọn menu trên mobile */
+            header { padding: 20px 5%; }
+        }
+        /* --- SỬA TÊN CHAI RƯỢU (Sang trọng, quyền lực) --- */
+.wine-name {
+    font-family: 'Cinzel', 'Playfair Display', serif; /* Font chữ có chân chuẩn luxury */
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px; /* Giãn chữ nhẹ để tạo sự thanh thoát */
+    color: #ffffff;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    
+    /* Hiệu ứng mờ đổ bóng chữ nhẹ giúp chữ nổi bật trên nền tối */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+    transition: color 0.4s ease;
+}
+
+/* Khi di chuột vào card, tên rượu sẽ đổi sang màu vàng đồng mượt mà */
+.wine-card:hover .wine-name {
+    color: #d4af37; 
+}
+
+/* --- SỬA PHẦN VÙNG MIỀN/QUỐC GIA (Tinh tế, mờ ẩn) --- */
+.wine-region {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase; /* Ép viết hoa */
+    letter-spacing: 3px; /* Giãn cách chữ rộng chuẩn phong cách tối giản */
+    color: #7e7e86; /* Màu xám khói tinh tế */
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* --- SỬA PHẦN GIÁ TIỀN (Điểm nhấn hoàng gia) --- */
+.wine-price {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #d4af37; /* Màu vàng đồng (Gold) quý tộc */
+    letter-spacing: 1px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Đường gạch ngang mảnh thanh lịch */
+}
+
+/* --- MẸO BONUS: Nếu bạn có thêm phần mô tả ngắn (Taste/Description) --- */
+.wine-description {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-style: italic; /* Chữ in nghiêng mềm mại */
+    font-size: 15px;
+    color: #b3b3b3;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Vino Noir</div>
+        <ul class="nav-links">
+            <li><a href="#">Trang Chủ</a></li>
+            <li><a href="#">Bộ Sưu Tập</a></li>
+            <li><a href="#">Hầm Rượu</a></li>
+            <li><a href="#">Liên Hệ</a></li>
+        </ul>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Đẳng Cấp Trong Từng <span>Giọt Đậm Nồng</span></h1>
+            <p>Khám phá bộ sưu tập rượu vang thượng hạng được ủ trong hầm sâu hàng thế kỷ. Tinh hoa từ những thung lũng nho danh tiếng nhất thế giới.</p>
+            <button class="btn-premium">Trải Nghiệm Ngay</button>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="section-title">
+            <h2>Sản Phẩm Nổi Bật</h2>
+            <p>Tuyển chọn đặc biệt cho quý tộc</p>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1584916283921-722f40d12e6d?q=80&w=400" alt="Chai rượu vang 1">
+                </div>
+                <h3 class="product-title">Château Margaux 2015</h3>
+                <div class="product-price">24.500.000 đ</div>
+                <button class="add-to-cart">Thêm vào giỏ</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1584916283921-722f40d12e6d?q=80&w=400" alt="Chai rượu vang 2">
+                </div>
+                <h3 class="product-title">Cabernet Sauvignon Noir</h3>
+                <div class="product-price">4.800.000 đ</div>
+                <button class="add-to-cart">Thêm vào giỏ</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1584916283921-722f40d12e6d?q=80&w=400" alt="Chai rượu vang 3">
+                </div>
+                <h3 class="product-title">Merlot Grand Cru</h3>
+                <div class="product-price">8.900.000 đ</div>
+                <button class="add-to-cart">Thêm vào giỏ</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
