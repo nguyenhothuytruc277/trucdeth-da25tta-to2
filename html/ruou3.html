@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Château Margaux | The Aristocratic Elegance Legend</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+        .serif-title {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        /* Custom scrollbar tinh tế */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #262626; border-radius: 3px; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Header / Navigation -->
+    <header class="border-b border-neutral-900 px-6 py-4 flex justify-between items-center bg-black/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="text-xs uppercase tracking-[0.3em] text-neutral-500">Maison du Vin</div>
+        <div class="serif-title text-xl font-semibold tracking-wider text-amber-500/90">CHÂTEAU MARGAUX</div>
+        <div class="text-xs uppercase tracking-widest text-neutral-400 cursor-pointer hover:text-white transition">Giỏ hàng (0)</div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center flex-grow">
+        
+        <!-- Left: Visual Section (Khu vực hiển thị hình ảnh) -->
+        <div class="flex flex-col items-center justify-center relative group">
+            <!-- Background Glow ánh tím nhung cực kỳ hợp tone với hương hoa violet của Margaux -->
+            <div class="absolute w-72 h-72 bg-purple-950/10 rounded-full blur-[120px] group-hover:bg-purple-900/20 transition-all duration-700"></div>
+            
+            <!-- Khung chứa ảnh sản phẩm -->
+            <div class="relative border border-neutral-800/60 bg-gradient-to-b from-neutral-900/40 to-black p-8 rounded-2xl w-full max-w-md aspect-[3/4] flex items-center justify-center shadow-2xl backdrop-blur-sm overflow-hidden">
+                
+                <!-- BẠN CÓ THỂ THAY LINK ẢNH CỦA BẠN VÀO ĐÂY -->
+                <img 
+                    src="../assets/images/ruou3.jpg" 
+                    alt="Château Margaux" 
+                    class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                    onerror="this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1200'"
+                />
+                
+                <!-- Tag Cấp bậc cao quý nhất của bảng phân hạng Bordeaux 1855 -->
+                <span class="absolute top-4 right-4 text-[9px] uppercase tracking-widest text-neutral-400 border border-neutral-800 bg-black/60 px-2 py-1 rounded backdrop-blur-sm">
+                    Premier Cru Classé
+                </span>
+            </div>
+            
+            <!-- Dòng chữ nhỏ dưới ảnh -->
+            <div class="mt-4 text-center">
+                <span class="text-[10px] uppercase tracking-[0.4em] text-amber-500/60 block mb-2">Đỉnh Cao Thẩm Mỹ Bordeaux</span>
+                <div class="w-16 h-[1px] bg-neutral-900 mx-auto"></div>
+            </div>
+        </div>
+
+        <!-- Right: Premium Details Section -->
+        <div class="space-y-8">
+            <div class="space-y-3">
+                <span class="text-xs font-medium uppercase tracking-[0.25em] text-neutral-500">Margaux - Định Nghĩa Của Sự Thanh Lịch</span>
+                <h1 class="title serif-title text-4xl sm:text-5xl font-normal text-white tracking-wide leading-tight">
+                    Château Margaux
+                </h1>
+                <!-- Giá tiền hiển thị thượng đẳng -->
+                <div class="price text-2xl font-light text-amber-500 tracking-wider pt-2">
+                    580.000.000 đ
+                </div>
+            </div>
+
+            <div class="w-full h-[1px] bg-neutral-900"></div>
+
+            <!-- Hệ Màu Sắc Tinh Tế Đặc Trưng Khác Biệt -->
+            <div class="space-y-4">
+                <h3 class="text-xs uppercase tracking-widest text-neutral-400 font-medium">Sắc Thế Huyền Bí (Visual Spectrum)</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-neutral-950 p-4 rounded-lg border border-neutral-900">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span class="w-3 h-3 rounded-full bg-[#340417] inline-block border border-black"></span>
+                            <span class="text-xs font-medium text-white">Sắc Đỏ Tím Nhung</span>
+                        </div>
+                        <p class="text-xs text-neutral-500 leading-relaxed">Màu sắc quyến rũ như những dải lụa nhung đen pha sắc tím đậm đặc trưng.</p>
+                    </div>
+                    <div class="bg-neutral-950 p-4 rounded-lg border border-neutral-900">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span class="w-3 h-3 rounded-full bg-[#53182b] inline-block border border-black"></span>
+                            <span class="text-xs font-medium text-white">Ánh Viền Thạch Lựu</span>
+                        </div>
+                        <p class="text-xs text-neutral-500 leading-relaxed">Phản chiếu ánh ngọc lựu sẫm lung linh, bộc lộ sự mềm mại và nữ tính tuyệt đối.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thông Số Bản Tóm Tắt Địa Danh Margaux -->
+            <div class="space-y-3">
+                <h3 class="text-xs uppercase tracking-widest text-neutral-400 font-medium">Tác Phẩm Thổ Nhưỡng Margaux</h3>
+                <p class="text-sm text-neutral-400 font-light leading-relaxed">
+                    Sở hữu hương thơm nước hoa phức hợp say đắm lòng người, nổi bật với hoa violet khô, quả mâm xôi đen và hương da thuộc quý phái. Vị tannin mượt mà mướt mịn tựa như nhung satin, để lại hậu vị tinh tế kéo dài vô tận.
+                </p>
+            </div>
+
+            <div class="w-full h-[1px] bg-neutral-900"></div>
+
+            <!-- Call to Actions -->
+            <div class="space-y-4 pt-2">
+               
+<button class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-neutral-950 font-bold text-xs uppercase tracking-[0.3em] py-4 rounded-lg transition-all duration-300 active:scale-[0.99] shadow-[0_4px_20px_rgba(217,119,6,0.25)] hover:shadow-[0_4px_30px_rgba(217,119,6,0.4)]">
+    CHỐT ĐƠN
+</button>
+               
+            </div>
+
+            <!-- Đặc Quyền Bảo Mật Riêng Cho Château Margaux -->
+            <p class="text-[10px] text-center text-neutral-600 tracking-wide font-light">
+                * Toàn bộ các niên vụ của Château Margaux đều được tích hợp hệ thống bảo mật viên nang laser chống giả độc quyền tại cổ chai.
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-neutral-900 py-6 text-center text-[10px] uppercase tracking-widest text-neutral-600 bg-black/20">
+        © 2026 Maison du Vin. All Rights Reserved. Secret Allocation Only.
+    </footer>
+
+</body>
+</html>

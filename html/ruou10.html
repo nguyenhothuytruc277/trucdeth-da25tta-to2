@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Pérignon P2 Plénitude | Trạng Thái Chín Muồi Thứ Hai</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #090909;
+            color: #e5e5e5;
+        }
+        .serif-title {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        /* Custom scrollbar tinh tế */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #090909; }
+        ::-webkit-scrollbar-thumb { background: #262626; border-radius: 3px; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Header / Navigation -->
+    <header class="border-b border-neutral-900 px-6 py-4 flex justify-between items-center bg-black/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="text-xs uppercase tracking-[0.3em] text-neutral-500">Maison du Vin</div>
+        <div class="serif-title text-xl font-semibold tracking-wider text-amber-500/90">DOM PÉRIGNON</div>
+        <div class="text-xs uppercase tracking-widest text-neutral-400 cursor-pointer hover:text-white transition">Giỏ hàng (0)</div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center flex-grow">
+        
+        <!-- Left: Visual Section (Khu vực hiển thị hình ảnh) -->
+        <div class="flex flex-col items-center justify-center relative group">
+            <!-- Background Glow ánh xanh rêu sẫm / titan tối phù hợp với vỏ chai Dom Pérignon P2 -->
+            <div class="absolute w-72 h-72 bg-emerald-950/10 rounded-full blur-[120px] group-hover:bg-neutral-800/20 transition-all duration-700"></div>
+            
+            <!-- Khung chứa ảnh sản phẩm -->
+            <div class="relative border border-neutral-800/60 bg-gradient-to-b from-neutral-900/30 to-black p-8 rounded-2xl w-full max-w-md aspect-[3/4] flex items-center justify-center shadow-2xl backdrop-blur-sm overflow-hidden">
+                
+                <!-- BẠN CÓ THỂ THAY LINK ẢNH CỦA BẠN VÀO ĐÂY -->
+                <img 
+                    src="../assets/images/dom-perignon-p2.jpeg" 
+                    alt="Dom Pérignon P2 Plénitude" 
+                    class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                    onerror="this.src='https://images.unsplash.com/photo-1594498653385-d5172b532c00?q=80&w=1200'"
+                />
+                
+                <!-- Tag phân hạng danh giá của vùng Champagne, Pháp -->
+                <span class="absolute top-4 right-4 text-[9px] uppercase tracking-widest text-neutral-400 border border-neutral-800 bg-black/60 px-2 py-1 rounded backdrop-blur-sm">
+                    Prestige Cuvée Champagne
+                </span>
+            </div>
+            
+            <!-- Dòng chữ nhỏ dưới ảnh -->
+            <div class="mt-4 text-center">
+                <span class="text-[10px] uppercase tracking-[0.4em] text-amber-500/60 block mb-2">Plénitude 2 - Sức Sống Vượt Thời Gian</span>
+                <div class="w-16 h-[1px] bg-neutral-900 mx-auto"></div>
+            </div>
+        </div>
+
+        <!-- Right: Premium Details Section -->
+        <div class="space-y-8">
+            <div class="space-y-3">
+                <span class="text-xs font-medium uppercase tracking-[0.25em] text-neutral-500">16 Năm Trưởng Thành Trong Hầm Tối Của Nhà Sưu Tầm</span>
+                <h1 class="title serif-title text-4xl sm:text-5xl font-normal text-white tracking-wide leading-tight">
+                    Dom Pérignon P2 Plénitude
+                </h1>
+                <!-- Giá tiền hiển thị thượng đẳng -->
+                <div class="price text-2xl font-light text-amber-500 tracking-wider pt-2">
+                    15.000.000 đ
+                </div>
+            </div>
+
+            <div class="w-full h-[1px] bg-neutral-900"></div>
+
+            <!-- Hệ Màu Sắc Tinh Tế Của Cốt Rượu Plénitude 2 -->
+            <div class="space-y-4">
+                <h3 class="text-xs uppercase tracking-widest text-neutral-400 font-medium">Sắc Thế Huyền Bí (Visual Spectrum)</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-neutral-950 p-4 rounded-lg border border-neutral-900">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span class="w-3 h-3 rounded-full bg-[#d4a373] inline-block border border-black"></span>
+                            <span class="text-xs font-medium text-white">Vàng Sáng Ánh Kim Loại</span>
+                        </div>
+                        <p class="text-xs text-neutral-500 leading-relaxed">Sắc vàng đậm đà tôn vinh cấu trúc của giống nho Pinot Noir, phản chiếu năng lượng bất tận sau nhiều năm ủ bã men.</p>
+                    </div>
+                    <div class="bg-neutral-950 p-4 rounded-lg border border-neutral-900">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span class="w-3 h-3 rounded-full bg-[#b5838d] inline-block border border-black"></span>
+                            <span class="text-xs font-medium text-white">Bọt Khí Tế Bào Siêu Mịn</span>
+                        </div>
+                        <p class="text-xs text-neutral-500 leading-relaxed">Những chuỗi tăm sủi li ti, mượt mà chuyển động liên tục, minh chứng cho áp suất hoàn hảo được giữ kín trong hai thập kỷ.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thông Số Bản Tóm Tắt Tinh Hoa Kỹ Nghệ Chef de Cave -->
+            <div class="space-y-3">
+                <h3 class="text-xs uppercase tracking-widest text-neutral-400 font-medium">Đỉnh Cao Của Sự Tái Sinh</h3>
+                <p class="text-sm text-neutral-400 font-light leading-relaxed">
+                    P2 (Plénitude 2) đại diện cho đỉnh cao năng lượng thứ hai của Dom Pérignon, nơi mà hương vị được giải phóng mạnh mẽ và sắc nét hơn bao giờ hết. Rượu bùng nổ với các nốt hương của mạch nha, bánh mì nướng brioche, cam bergamot và khoáng chất biển sâu độc bản. Cấu trúc rượu dày dặn, sống động, mang đến một hậu vị kéo dài vô tận, đan xen chút vị mặn tinh tế đầy cá tính.
+                </p>
+            </div>
+
+            <div class="w-full h-[1px] bg-neutral-900"></div>
+
+            <!-- Call to Actions -->
+            <div class="space-y-4 pt-2">
+                <!-- NÚT MUA NGAY HIỆN NGUYÊN KHUNG MÀU CAM RỰC RỠ -->
+                <button class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-neutral-950 font-bold text-xs uppercase tracking-[0.3em] py-4 rounded-lg transition-all duration-300 active:scale-[0.99] shadow-[0_4px_20px_rgba(217,119,6,0.25)] hover:shadow-[0_4px_30px_rgba(217,119,6,0.4)]">
+                    CHỐT ĐƠN
+                </button>
+                
+                
+            </div>
+
+            <!-- Chế độ bảo quản chuẩn Cellar Master -->
+            <p class="text-[10px] text-center text-neutral-600 tracking-wide font-light">
+                * Tất cả các chai Dom Pérignon P2 tại Maison du Vin đều được lưu trữ nghiêm ngặt trong điều kiện hầm tối 12°C, độ ẩm 70% và trang bị hệ thống chống rung động chấn chu kỳ sâu để bảo toàn nguyên vẹn năng lượng sủi tăm.
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-neutral-900 py-6 text-center text-[10px] uppercase tracking-widest text-neutral-600 bg-black/20">
+        © 2026 Maison du Vin. All Rights Reserved. Allocated Collection.
+    </footer>
+
+</body>
+</html>

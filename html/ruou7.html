@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tên Sản Phẩm | Giao Diện Thượng Lưu</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+        .serif-title {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        /* Custom scrollbar mượt mà */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #262626; border-radius: 3px; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Header / Navigation -->
+    <header class="border-b border-neutral-900 px-6 py-4 flex justify-between items-center bg-black/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="text-xs uppercase tracking-[0.3em] text-neutral-500">Maison du Vin</div>
+        <!-- THAY ĐỔI: Tên hãng rượu viết in hoa ở giữa header -->
+        <div class="serif-title text-xl font-semibold tracking-wider text-amber-500/90">BRAND NAME</div>
+        <div class="text-xs uppercase tracking-widest text-neutral-400 cursor-pointer hover:text-white transition">Giỏ hàng (0)</div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center flex-grow">
+        
+        <!-- Left: Visual Section (Khu vực hình ảnh) -->
+        <div class="flex flex-col items-center justify-center relative group">
+            <!-- Background Glow ánh sáng huyền bí làm nổi bật sản phẩm -->
+            <div class="absolute w-72 h-72 bg-amber-950/5 rounded-full blur-[120px] group-hover:bg-amber-900/10 transition-all duration-700"></div>
+            
+            <!-- Khung chứa ảnh sản phẩm -->
+            <div class="relative border border-neutral-800/60 bg-gradient-to-b from-neutral-900/40 to-black p-8 rounded-2xl w-full max-w-md aspect-[3/4] flex items-center justify-center shadow-2xl backdrop-blur-sm overflow-hidden">
+                
+                <!-- THAY ĐỔI: Đường dẫn ảnh sản phẩm của bạn tại src -->
+                <img 
+                    src="../assets/images/ruou7.jpg" 
+                    alt="Tên Sản Phẩm" 
+                    class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                    onerror="this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1200'"
+                />
+                
+                <!-- THAY ĐỔI: Nhãn cấp bậc/phân hạng nhỏ góc phải -->
+                <span class="absolute top-4 right-4 text-[9px] uppercase tracking-widest text-neutral-400 border border-neutral-800 bg-black/60 px-2 py-1 rounded backdrop-blur-sm">
+                    Exclusive Label
+                </span>
+            </div>
+            
+            <!-- Dòng chữ trang trí nhỏ dưới ảnh -->
+            <div class="mt-4 text-center">
+                <span class="text-[10px] uppercase tracking-[0.4em] text-amber-500/60 block mb-2">Tuyệt Tác Di Sản Giới Hạn</span>
+                <div class="w-16 h-[1px] bg-neutral-900 mx-auto"></div>
+            </div>
+        </div>
+
+        <!-- Right: Premium Details Section -->
+        <div class="space-y-8">
+            <div class="space-y-3">
+                <!-- THAY ĐỔI: Tiêu đề phụ/Định vị dòng sản phẩm -->
+                <span class="text-xs font-medium uppercase tracking-[0.25em] text-neutral-500">Dòng Vang Biểu Tượng Toàn Cầu</span>
+                <!-- THAY ĐỔI: Tên đầy đủ của chai rượu -->
+                <h1 class="title serif-title text-4xl sm:text-5xl font-normal text-white tracking-wide leading-tight">
+                    Sassicaia Tenuta San Guido
+                </h1>
+                <!-- THAY ĐỔI: Giá tiền hiển thị thượng đẳng -->
+                <div class="price text-2xl font-light text-amber-500 tracking-wider pt-2">
+                    12.500.000 đ
+                </div>
+            </div>
+
+            <div class="w-full h-[1px] bg-neutral-900"></div>
+
+            <!-- Hệ Màu Sắc Cốt Rượu (Visual Spectrum) -->
+            <div class="space-y-4">
+                <h3 class="text-xs uppercase tracking-widest text-neutral-400 font-medium">Sắc Thế Huyền Bí (Visual Spectrum)</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-neutral-950 p-4 rounded-lg border border-neutral-900">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <!-- THAY ĐỔI: Mã màu hex tại bg-[...] phù hợp cốt rượu -->
+                            <span class="w-3 h-3 rounded-full bg-[#3d030c] inline-block border border-black"></span>
+                            <span class="text-xs font-medium text-white">Sắc Cốt Chủ Đạo</span>
+                        </div>
+                        <!-- THAY ĐỔI: Mô tả màu sắc của cốt rượu -->
+                        <p class="text-xs text-neutral-500 leading-relaxed">Mô tả màu sắc sâu thẳm của rượu khi rót ra ly.</p>
+                    </div>
+                    <div class="bg-neutral-950 p-4 rounded-lg border border-neutral-900">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <!-- THAY ĐỔI: Mã màu hex tại bg-[...] phù hợp viền rượu -->
+                            <span class="w-3 h-3 rounded-full bg-[#621623] inline-block border border-black"></span>
+                            <span class="text-xs font-medium text-white">Ánh Viền Phản Chiếu</span>
+                        </div>
+                        <!-- THAY ĐỔI: Mô tả viền rượu khi nghiêng ly -->
+                        <p class="text-xs text-neutral-500 leading-relaxed">Mô tả sắc thái viền rượu phản chiếu dưới ánh đèn.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thông Số Bản Tóm Tắt Thổ Nhưỡng / Hương Vị -->
+            <div class="space-y-3">
+                <h3 class="text-xs uppercase tracking-widest text-neutral-400 font-medium">Câu Chuyện Hương Vị & Thổ Nhưỡng</h3>
+                <!-- THAY ĐỔI: Đoạn văn kể về hương vị, tannin, hậu vị và thổ nhưỡng đặc trưng -->
+                <p class="text-sm text-neutral-400 font-light leading-relaxed">
+                    Nơi ghi lại những ghi chú nếm thử (tasting notes) đầy chất thơ: từ những tầng hương hoa quả, gỗ tuyết tùng cho đến kết cấu mượt mà của tannin trên vòm họng và hậu vị ngân vang bền bỉ.
+                </p>
+            </div>
+
+            <div class="w-full h-[1px] bg-neutral-900"></div>
+
+            <!-- Call to Actions -->
+            <div class="space-y-4 pt-2">
+                <!-- NÚT MUA NGAY ĐỔ NGUYÊN KHUNG MÀU CAM RỰC RỠ NỔI BẬT NÃY GIỜ -->
+                <button class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-neutral-950 font-bold text-xs uppercase tracking-[0.3em] py-4 rounded-lg transition-all duration-300 active:scale-[0.99] shadow-[0_4px_20px_rgba(217,119,6,0.25)] hover:shadow-[0_4px_30px_rgba(217,119,6,0.4)]">
+                    CHỐT ĐƠN
+                </button>
+                
+               
+            </div>
+
+            <!-- Đặc Quyền Bảo Mật / Lưu Ý -->
+            <!-- THAY ĐỔI: Dòng chữ lưu ý bảo mật nhỏ dưới cùng nếu có -->
+            <p class="text-[10px] text-center text-neutral-600 tracking-wide font-light">
+                * Sản phẩm thuộc danh mục phân phối giới hạn. Vui lòng xác thực mã số định danh đi kèm trên mỗi cổ chai khi bàn giao.
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-neutral-900 py-6 text-center text-[10px] uppercase tracking-widest text-neutral-600 bg-black/20">
+        © 2026 Maison du Vin. All Rights Reserved. Private Allocation Only.
+    </footer>
+
+</body>
+</html>
