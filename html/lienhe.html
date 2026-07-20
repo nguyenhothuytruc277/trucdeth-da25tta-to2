@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thanh Toán | Maison du Vin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #e5e5e5; }
+        .serif-title { font-family: 'Cormorant Garamond', serif; }
+        input, select { background: #000 !important; border: 1px solid #262626 !important; }
+        input:focus { border-color: #d97706 !important; outline: none; }
+    </style>
+</head>
+<body class="py-12">
+
+<div class="max-w-3xl mx-auto px-6">
+    <h1 class="serif-title text-4xl text-amber-500 mb-8 text-center">THANH TOÁN</h1>
+    
+    <form id="checkoutForm" class="space-y-10">
+        <!-- Thông tin người nhận -->
+        <section>
+            <h2 class="text-xs uppercase tracking-[0.2em] text-neutral-400 mb-6 border-b border-neutral-800 pb-2">Thông tin người nhận</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input type="text" placeholder="Họ và tên" class="w-full p-4 text-sm" required>
+                <input type="email" placeholder="Email" class="w-full p-4 text-sm" required>
+                <input type="tel" placeholder="Số điện thoại" class="w-full p-4 text-sm" required>
+                <input type="text" placeholder="Tỉnh/Thành phố" class="w-full p-4 text-sm" required>
+                <input type="text" placeholder="Quận/Huyện" class="w-full p-4 text-sm" required>
+                <input type="text" placeholder="Phường/Xã" class="w-full p-4 text-sm" required>
+            </div>
+            <textarea placeholder="Địa chỉ nhận hàng chi tiết" class="w-full p-4 text-sm mt-6" rows="2"></textarea>
+            <textarea placeholder="Ghi chú đơn hàng" class="w-full p-4 text-sm mt-6" rows="2"></textarea>
+        </section>
+
+        <!-- Phương thức thanh toán -->
+        <section>
+            <h2 class="text-xs uppercase tracking-[0.2em] text-neutral-400 mb-6 border-b border-neutral-800 pb-2">Phương thức thanh toán</h2>
+            <div class="space-y-4">
+                <label class="flex items-center space-x-3 cursor-pointer p-4 border border-neutral-800 hover:border-amber-600 transition">
+                    <input type="radio" name="payment" value="cod" class="w-4 h-4 accent-amber-600" checked>
+                    <span class="text-sm">Tiền mặt (COD) - <span class="text-neutral-500 italic">Chỉ áp dụng nội thành TPHCM</span></span>
+                </label>
+                
+                <label class="flex flex-col p-4 border border-neutral-800 hover:border-amber-600 transition cursor-pointer">
+                    <div class="flex items-center space-x-3 mb-2">
+                        <input type="radio" name="payment" value="transfer" class="w-4 h-4 accent-amber-600">
+                        <span class="text-sm font-bold">Chuyển khoản ngân hàng</span>
+                    </div>
+                    <p class="text-[11px] text-neutral-500 leading-relaxed ml-7">
+                        Vì lí do bảo mật, khi quý khách chọn hình thức này, nhân viên CSKH của chúng tôi sẽ liên hệ trực tiếp để xác nhận và cung cấp thông tin tài khoản ngân hàng. Cám ơn sự tin tưởng của quý khách.
+                    </p>
+                </label>
+            </div>
+        </section>
+
+        <!-- Nút hành động -->
+        <div class="pt-6 border-t border-neutral-800">
+            <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-black py-4 uppercase tracking-[0.2em] text-xs font-bold transition">
+                Xác nhận đặt hàng
+            </button>
+            <p class="text-center text-[10px] text-neutral-600 mt-6 uppercase tracking-widest">
+                Hỗ trợ trực tiếp: FB: Thuy Truc
+            </p>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Đơn hàng của quý khách đã được gửi. Nhân viên CSKH sẽ liên hệ với quý khách trong giây lát.');
+    });
+</script>
+</body>
+</html>
